@@ -18,8 +18,6 @@ mob_scene = ExtResource("2_cya5o")
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="ScoreTimer" type="Timer" parent="."]
-
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
@@ -37,7 +35,5 @@ curve = SubResource("Curve2D_p4s5b")
 [node name="Player" parent="." instance=ExtResource("1_8vc0q")]
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
-[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
-[connection signal="hit" from="Player" to="." method="game_over"]

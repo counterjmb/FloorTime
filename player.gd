@@ -1,5 +1,6 @@
 extends Area2D
-signal hit
+# signal hit
+signal contact
 
 @export var speed = 400
 var screen_size
@@ -40,9 +41,8 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	hide()
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", true)
+	contact.emit()
+	
 	
 func start(pos):
 	position = pos

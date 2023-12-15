@@ -58,5 +58,19 @@ text = "Start"
 wait_time = 2.0
 one_shot = true
 
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 8.0
+offset_right = 152.0
+offset_bottom = 72.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 10.0
+tint_progress = Color(0.611765, 0, 0, 1)
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
