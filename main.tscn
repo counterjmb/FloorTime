@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd051qwqy0ugx"]
+[gd_scene load_steps=7 format=3 uid="uid://dd051qwqy0ugx"]
 
 [ext_resource type="PackedScene" uid="uid://dnu8gkiod6unf" path="res://player.tscn" id="1_8vc0q"]
 [ext_resource type="Script" path="res://main.gd" id="1_krqng"]
 [ext_resource type="PackedScene" uid="uid://bkmi26thrtnpm" path="res://mob.tscn" id="2_cya5o"]
 [ext_resource type="PackedScene" uid="uid://c33ao7i328sgo" path="res://hud.tscn" id="4_q7ohk"]
+[ext_resource type="PackedScene" uid="uid://c1wwvg4ismoyb" path="res://boost.tscn" id="5_3w3hb"]
 
 [sub_resource type="Curve2D" id="Curve2D_p4s5b"]
 _data = {
@@ -14,6 +15,7 @@ point_count = 5
 [node name="Main" type="Node"]
 script = ExtResource("1_krqng")
 mob_scene = ExtResource("2_cya5o")
+boost_scene = ExtResource("5_3w3hb")
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -34,6 +36,11 @@ curve = SubResource("Curve2D_p4s5b")
 
 [node name="Player" parent="." instance=ExtResource("1_8vc0q")]
 
+[node name="Boost" parent="." instance=ExtResource("5_3w3hb")]
+position = Vector2(111.124, 33.1271)
+
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="decrease_health" from="Player" to="." method="decrease_health"]
+[connection signal="increase_health" from="Player" to="." method="increase_health"]

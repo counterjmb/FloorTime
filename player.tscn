@@ -1,48 +1,58 @@
 [gd_scene load_steps=8 format=3 uid="uid://dnu8gkiod6unf"]
 
-[ext_resource type="Texture2D" uid="uid://dcdqct0w5v78y" path="res://art/playerGrey_up1.png" id="1_7obbg"]
 [ext_resource type="Script" path="res://player.gd" id="1_x1341"]
-[ext_resource type="Texture2D" uid="uid://d2b2ejcx8bslv" path="res://art/playerGrey_up2.png" id="2_ucfq3"]
-[ext_resource type="Texture2D" uid="uid://dlohx3bbvao01" path="res://art/playerGrey_walk1.png" id="3_6188n"]
-[ext_resource type="Texture2D" uid="uid://bhe8l01f27sbx" path="res://art/playerGrey_walk2.png" id="4_vwrr6"]
+[ext_resource type="Texture2D" uid="uid://d35wsrk408oqf" path="res://art/dead.png" id="2_3pteo"]
+[ext_resource type="Texture2D" uid="uid://cx4k0pdfgy5mf" path="res://art/anxiety.png" id="3_yoj2g"]
+[ext_resource type="Texture2D" uid="uid://c06f58ttgx66o" path="res://art/normal.png" id="4_5v3mh"]
+[ext_resource type="Texture2D" uid="uid://dotj8thun7x2g" path="res://art/happy.png" id="5_apyl7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_464ec"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7obbg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ucfq3")
+"texture": ExtResource("3_yoj2g")
 }],
 "loop": true,
-"name": &"up",
+"name": &"anxiety",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_6188n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_vwrr6")
+"texture": ExtResource("2_3pteo")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_apyl7")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5v3mh")
+}],
+"loop": true,
+"name": &"normal",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjhf5"]
-radius = 25.0
-height = 70.0
+radius = 41.0
+height = 116.0
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_x1341")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_464ec")
-animation = &"walk"
+animation = &"normal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_mjhf5")

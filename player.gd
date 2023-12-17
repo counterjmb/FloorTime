@@ -1,6 +1,8 @@
 extends Area2D
 # signal hit
 signal contact
+signal increase_health
+signal decrease_health
 
 @export var speed = 400
 var screen_size
@@ -30,18 +32,29 @@ func _process(delta):
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
-	if velocity.x != 0:
-		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.flip_v = false
-		# See the note below about boolean assignment.
-		$AnimatedSprite2D.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		$AnimatedSprite2D.animation = "up"
-		$AnimatedSprite2D.flip_v = velocity.y > 0
+	#if velocity.x != 0:
+	#	$AnimatedSprite2D.animation = "walk"
+	#	$AnimatedSprite2D.flip_v = false
+	#	# See the note below about boolean assignment.
+	#	$AnimatedSprite2D.flip_h = velocity.x < 0
+	#elif velocity.y != 0:
+	#	$AnimatedSprite2D.animation = "up"
+	#	$AnimatedSprite2D.flip_v = velocity.y > 0
+func update_animation(x):
+	match x:
+		0: $AnimatedSprite2D.animation = "dead"
+		1,2,3 : $AnimatedSprite2D.animation = "anxiety"
+		4,5,6,7: $AnimatedSprite2D.animation = "normal"
+		8,9,10: $AnimatedSprite2D.animation = "happy"
+		_: print("Unmatched")
 
 
 func _on_body_entered(body):
-	contact.emit()
+	if body.scene_file_path == "res://mob.tscn":
+		decrease_health.emit()
+	if body.scene_file_path == "res://boost.tscn":
+		increase_health.emit()
+	body.queue_free()
 	
 	
 func start(pos):

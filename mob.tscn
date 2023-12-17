@@ -1,21 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkmi26thrtnpm"]
+[gd_scene load_steps=10 format=3 uid="uid://bkmi26thrtnpm"]
 
-[ext_resource type="Texture2D" uid="uid://cie838baweigt" path="res://art/enemyFlyingAlt_1.png" id="1_3a8ay"]
 [ext_resource type="Script" path="res://mob.gd" id="1_xsqko"]
-[ext_resource type="Texture2D" uid="uid://6m3dw3y0rgmg" path="res://art/enemyFlyingAlt_2.png" id="2_6rbk0"]
+[ext_resource type="Texture2D" uid="uid://dn7ujdtfuknpq" path="res://art/prs_1.png" id="2_koqg3"]
+[ext_resource type="Texture2D" uid="uid://bamo0hwphal6c" path="res://art/prs_2.png" id="3_hxr7u"]
+[ext_resource type="Texture2D" uid="uid://cm33bmudro2rm" path="res://art/anxiety_1.png" id="4_2xx0r"]
+[ext_resource type="Texture2D" uid="uid://bocvgdqjlt7b1" path="res://art/anxiety_2.png" id="5_0a6d2"]
+[ext_resource type="Texture2D" uid="uid://dmf0vr4w3amm5" path="res://art/seattle_weather_1.png" id="8_fsj8g"]
+[ext_resource type="Texture2D" uid="uid://blrbo6nfynu" path="res://art/seattle_weather_2.png" id="9_7xlas"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jebfv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_3a8ay")
+"texture": ExtResource("2_koqg3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_6rbk0")
+"texture": ExtResource("3_hxr7u")
 }],
 "loop": true,
-"name": &"fly",
-"speed": 3.0
+"name": &"PR",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2xx0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0a6d2")
+}],
+"loop": true,
+"name": &"anxiety",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fsj8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7xlas")
+}],
+"loop": true,
+"name": &"weather",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y5ynl"]
@@ -29,9 +55,9 @@ gravity_scale = 0.0
 script = ExtResource("1_xsqko")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_jebfv")
-animation = &"fly"
-frame_progress = 0.301751
+animation = &"PR"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

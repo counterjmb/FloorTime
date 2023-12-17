@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1wwvg4ismoyb"]
+
+[ext_resource type="Script" path="res://mob.gd" id="1_a3r2y"]
+[ext_resource type="Texture2D" uid="uid://71gd1chj4v2j" path="res://art/bear_1.png" id="2_n61md"]
+[ext_resource type="Texture2D" uid="uid://b1ld27bev4l4s" path="res://art/bear_2.png" id="3_s7me6"]
+[ext_resource type="Texture2D" uid="uid://v5xyaelr31j0" path="res://art/vash_1.png" id="4_5l4so"]
+[ext_resource type="Texture2D" uid="uid://cc5qo7oenfdi2" path="res://art/vash_2.png" id="5_ee3pd"]
+[ext_resource type="Texture2D" uid="uid://c4ntbr1u73x5p" path="res://art/whisky_1.png" id="6_g7vv2"]
+[ext_resource type="Texture2D" uid="uid://cu8ddem3d5xbb" path="res://art/whisky_2.png" id="7_8t7g0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jebfv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n61md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s7me6")
+}],
+"loop": true,
+"name": &"bear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5l4so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ee3pd")
+}],
+"loop": true,
+"name": &"vash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_g7vv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8t7g0")
+}],
+"loop": true,
+"name": &"whisky",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y5ynl"]
+radius = 41.3333
+height = 117.333
+
+[node name="Boost" type="RigidBody2D"]
+scale = Vector2(0.75, 0.75)
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_a3r2y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_jebfv")
+animation = &"vash"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_y5ynl")
