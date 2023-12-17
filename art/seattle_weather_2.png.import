@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rwx88fa3jn6g"
-path="res://.godot/imported/enemyWalking_1.png-5af6eedbe61b701677d490ffdc1e6471.ctex"
+uid="uid://blrbo6nfynu"
+path="res://.godot/imported/seattle_weather_2.png-eacc94453af2508b6816a2b9bc163080.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemyWalking_1.png"
-dest_files=["res://.godot/imported/enemyWalking_1.png-5af6eedbe61b701677d490ffdc1e6471.ctex"]
+source_file="res://art/seattle_weather_2.png"
+dest_files=["res://.godot/imported/seattle_weather_2.png-eacc94453af2508b6816a2b9bc163080.ctex"]
 
 [params]
 

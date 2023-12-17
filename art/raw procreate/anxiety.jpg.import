@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cie838baweigt"
-path="res://.godot/imported/enemyFlyingAlt_1.png-559f599b16c69b112c1b53f6332e9489.ctex"
+uid="uid://cdeqg5sp1d5k8"
+path="res://.godot/imported/anxiety.jpg-d2adf753983bf0915a01e5559e169d00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemyFlyingAlt_1.png"
-dest_files=["res://.godot/imported/enemyFlyingAlt_1.png-559f599b16c69b112c1b53f6332e9489.ctex"]
+source_file="res://art/raw procreate/anxiety.jpg"
+dest_files=["res://.godot/imported/anxiety.jpg-d2adf753983bf0915a01e5559e169d00.ctex"]
 
 [params]
 

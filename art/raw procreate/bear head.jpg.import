@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlohx3bbvao01"
-path="res://.godot/imported/playerGrey_walk1.png-c4773fe7a7bf85d7ab732eb4458c2742.ctex"
+uid="uid://qkpiyvhue5tw"
+path="res://.godot/imported/bear head.jpg-f782b583836c46428c6742068a6abe20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/playerGrey_walk1.png"
-dest_files=["res://.godot/imported/playerGrey_walk1.png-c4773fe7a7bf85d7ab732eb4458c2742.ctex"]
+source_file="res://art/raw procreate/bear head.jpg"
+dest_files=["res://.godot/imported/bear head.jpg-f782b583836c46428c6742068a6abe20.ctex"]
 
 [params]
 
